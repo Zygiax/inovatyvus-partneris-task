@@ -16,10 +16,10 @@ class CreateTrucksTable extends Migration
         Schema::create('trucks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('trucks_make_id');
-            $table->string('year_of_manufacture');
+            $table->year('year_of_manufacture');
             $table->string('owner_name_and_surname');
-            $table->string('owners_count');
-            $table->string('comment');
+            $table->integer('owners_count')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

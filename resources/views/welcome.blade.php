@@ -14,8 +14,6 @@
             <div class="text-center">
                 <h1>Task</h1>
             </div>
-        <div class="">
             {!! form($form) !!}
-        </div>
     </div>
 @endsection

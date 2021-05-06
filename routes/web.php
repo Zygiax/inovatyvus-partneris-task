@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\TruckController::class, 'index'])->name('index');
 Route::post('/store', [App\Http\Controllers\TruckController::class, 'store'])->name('store');
 
-Route::get('/table', [App\Http\Controllers\TruckController::class, 'table'])->name('table');
+Route::post('/table', [App\Http\Controllers\TruckController::class, 'table'])->name('table');
+Route::get('/table-view', [App\Http\Controllers\TruckController::class, 'tableView'])->name('table-view');
+

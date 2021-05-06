@@ -9,4 +9,9 @@ class Truck extends Model
 {
     use HasFactory;
     protected $table = 'trucks';
+
+    public function make()
+    {
+        return $this->hasOne(TruckMake::class, 'id', 'trucks_make_id');
+    }
 }

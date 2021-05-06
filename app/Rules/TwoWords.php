@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class twoWords implements Rule
+class TwoWords implements Rule
 {
     /**
      * Create a new rule instance.
