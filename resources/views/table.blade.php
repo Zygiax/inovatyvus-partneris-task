@@ -25,6 +25,7 @@
     <script>
         $(document).ready(function () {
             $('#example').DataTable({
+                "paging": false,
                 "processing": true,
                 "serverSide": true,
                 "ajax": {
