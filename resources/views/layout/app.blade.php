@@ -44,7 +44,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('index')}}">Form</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{route('table-view')}}">Table</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('table')}}">Table</a>
                 </li>
             </ul>
         </div>

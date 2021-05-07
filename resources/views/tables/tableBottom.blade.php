@@ -3,6 +3,14 @@
     <td>{{$d->make->name}}</td>
     <td>{{$d->year_of_manufacture}}</td>
     <td>{{$d->owner_name_and_surname}}</td>
-    <td>{{$d->owners_count}}</td>
-    <td>{{$d->comment}}</td>
+    @if(!$d->owners_count)
+    <td>-</td>
+    @else
+        <td>{{$d->owners_count}}</td>
+        @endif
+    @if(!$d->comment)
+        <td>-</td>
+    @else
+        <td>{{$d->comment}}</td>
+    @endif
 </tr>
