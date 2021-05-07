@@ -3,14 +3,15 @@
 @section('content')
     <div class="container">
         <div class="text-center">
-                <form method="get" action="{{route('table')}}">
-                    {{ csrf_field() }}
+                <form id="sort" method="get" action="{{route('table')}}">
                     <div class="row g-3">
+                        <input type="hidden" id="order" name="order" value="@isset($orderFieldValue) {{$orderFieldValue}} @endisset">
+                        <input type="hidden" id="direction" name="direction" value="@isset($orderFieldDirection) {{$orderFieldDirection}} @endisset">
                         <div class="col-auto">
                             <label for="search" class="col-form-label">Search</label>
                         </div>
                         <div class="col-auto">
-                            <input type="text" id="search" name="search" class="form-control">
+                            <input type="text" id="search" name="search" class="form-control" value="@isset($searchFieldValue) {{$searchFieldValue}} @endisset">
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-dark">Submit</button>
@@ -34,10 +35,11 @@
                 @endforelse
                 </tbody>
             </table>
-            <form id="sort" method="get" action="{{route('table')}}">
-                <input type="hidden" id="order" name="order" value="0">
-                <input type="hidden" id="direction" name="direction" value="0">
-            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ $data->links('pagination::bootstrap-4') }}
+                </div>
+            </div>
         </div>
     </div>
 @endsection

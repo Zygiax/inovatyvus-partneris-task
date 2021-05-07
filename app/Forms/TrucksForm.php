@@ -12,9 +12,15 @@ class TrucksForm extends Form
 {
     public function buildForm()
     {
+        $values = TruckMake::all();
+        $array = [];
+        foreach ($values as $value)
+        {
+            $array[$value->id] = $value->name;
+        }
         $this
             ->add('truckMakeId', 'select', [
-                'choices' => ['1' => 'Volvo', '2' => 'VAZ', '3' => 'Mercedes', '4' => 'GAZ'],
+                'choices' => $array,
                 'label' => 'Truck Make'
             ])
             ->add('yearOfManufacture', 'number', [

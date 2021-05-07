@@ -69,9 +69,11 @@ class TruckController extends Controller
                 ->orWhere('trucks_make.name','LIKE',"%{$request->search}%");
         }
 
-        $data = $data->get();
-        $dataCount = count($data);
-        return view('table', compact('data'));
+        $searchFieldValue = $request->search;
+        $orderFieldValue = $request->order;
+        $orderFieldDirection = $request->direction;
+        $data = $data->paginate(5);
+        return view('table', compact('data', 'searchFieldValue', 'orderFieldValue', 'orderFieldDirection'));
     }
 }
 
