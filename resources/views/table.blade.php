@@ -35,7 +35,6 @@
                 </tbody>
             </table>
             <form id="sort" method="get" action="{{route('table')}}">
-                {{ csrf_field() }}
                 <input type="hidden" id="order" name="order" value="0">
                 <input type="hidden" id="direction" name="direction" value="0">
             </form>
